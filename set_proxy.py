@@ -55,16 +55,22 @@ if proxy_enable:
 else:
     print("\nNo proxy is set..\n")
 
-#print("Want to set the proxy? [Default: 172.30.10.10:3128]?")
-opt = input("[1] Enable Proxy\t[2] Disable Proxy\n")
+print("Want to set the proxy? [Default: 172.30.10.11:3128]?")
+opt = input("[1] Enable Proxy\t[2] Disable Proxy\t[3] Change Proxy Server\n")
+default_proxy = 'http://172.30.10.11:3128'
 
-if opt == '1':
-    set_proxy(True, 'http://172.30.10.10:3128')
+
+if opt == '':
+    set_proxy(True, default_proxy)
+elif opt == '1':
+    set_proxy(True, 'http://172.30.10.11:3128')
 elif opt == '2':
     set_proxy(False, '')
+elif opt == '3':
+    new_proxy = input("Enter new proxy server: ")
+    set_proxy(True, new_proxy)
 else:
     print("Invalid input!")
-
 proxy_enable, proxy_server = get_proxy_settings()
 if proxy_enable:
     print("Proxy has been enabled. [", proxy_server, "]")
