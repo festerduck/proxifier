@@ -47,14 +47,14 @@ int main() {
     clrScr();
     std::string proxyServer;
     bool proxyEnabled = getProxySettings(proxyServer);
-    std::cout << "Proxy Changer by Abdul Rehman \n@festerduck" << std::endl;
+    std::cout << "Proxy Changer by Abdul Rehman \n\033[1;34m@festerduck\033[0m" << std::endl;
     std::cout << "**************************************************************************************" << std::endl;
     if (proxyEnabled) {
-        std::cout << "\tCurrent proxy is\t[" << proxyServer << "]\n";
+        std::cout << "\tCurrent proxy is\t[\033[1;32m" << proxyServer << "\033[0m]\n";
     } else {
-        std::cout << "\nNo proxy is set..\n";
+        std::cout << "\n\033[1;31mNo proxy is set..\033[0m\n";
     }
-    std::cout << "\nSet the proxy: [Default: 172.30.10.11:3128]?\n\n[1] Enable Proxy\t[2] Disable Proxy\t[3] Change Proxy Server\n\n";
+    std::cout << "\nSet the proxy: [Default: 172.30.10.11:3128]?\n\n\033[1;34m [1] Enable Proxy\033[0m\t\033[1;31m[2] Disable Proxy\033[0m\t[3] Change Proxy Server\n\n";
     std::cout << "**************************************************************************************" << std::endl;
     std::cout << "\n$ ";
     std::string opt;
@@ -78,7 +78,7 @@ int main() {
 
     proxyEnabled = getProxySettings(proxyServer);
     if (proxyEnabled) {
-        std::cout << "Proxy has been enabled. [" << proxyServer << "]\n";
+        std::cout << "Proxy has been enabled. \033[1;32m[" << proxyServer << "]\033[0m\n";
     } else {
         std::cout << "Proxy has been disabled\n";
     }
