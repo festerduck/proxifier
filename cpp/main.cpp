@@ -47,15 +47,14 @@ int main() {
     clrScr();
     std::string proxyServer;
     bool proxyEnabled = getProxySettings(proxyServer);
-    std::cout << "**************************************************************************************" << std::endl;
     std::cout << "Proxy Changer by Abdul Rehman \n@festerduck" << std::endl;
+    std::cout << "**************************************************************************************" << std::endl;
     if (proxyEnabled) {
         std::cout << "\tCurrent proxy is\t[" << proxyServer << "]\n";
     } else {
         std::cout << "\nNo proxy is set..\n";
     }
-
-    std::cout << "\nWant to set the proxy? [Default: 172.30.10.11:3128]?\n[1] Enable Proxy\t[2] Disable Proxy\t[3] Change Proxy Server\n";
+    std::cout << "\nSet the proxy: [Default: 172.30.10.11:3128]?\n\n[1] Enable Proxy\t[2] Disable Proxy\t[3] Change Proxy Server\n\n";
     std::cout << "**************************************************************************************" << std::endl;
     std::cout << "\n$ ";
     std::string opt;
@@ -74,14 +73,14 @@ int main() {
         std::getline(std::cin, newProxy);
         setProxy(true, newProxy);
     } else {
-        std::cout << "Invalid input!";
+        std::cout << "Invalid input!\n";
     }
 
     proxyEnabled = getProxySettings(proxyServer);
     if (proxyEnabled) {
-        std::cout << "Proxy has been enabled. [" << proxyServer << "]";
+        std::cout << "Proxy has been enabled. [" << proxyServer << "]\n";
     } else {
-        std::cout << "Proxy has been disabled";
+        std::cout << "Proxy has been disabled\n";
     }
 
     std::cout << "\nPress any key to exit...";
